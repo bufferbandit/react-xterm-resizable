@@ -9,9 +9,9 @@ import ResizeObserver from "resize-observer-polyfill";
 const loremText = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`;
 
 class TerminalOutput extends Component {
-  xterm: Terminal;
-  termWrapperRef: ?HTMLElement = null;
-  resizeTimeout: TimeoutID;
+  xterm;
+  termWrapperRef = null;
+  resizeTimeout;
 
   componentDidMount() {
     Terminal.applyAddon(fit);
@@ -29,7 +29,7 @@ class TerminalOutput extends Component {
     this.xterm.fit();
 
     // fake terminal code --> commented because not needed for resize-demo
-    /*this.xterm.prompt = () => {
+    this.xterm.prompt = () => {
       this.xterm.write('\r\n>>> ');
     };
 
@@ -55,7 +55,7 @@ class TerminalOutput extends Component {
       this.xterm.addDisposableListener('paste', (data, ev) => {
         this.xterm.write(data);
       })
-    );*/
+    );
   }
 
   componentWillUnmount() {
@@ -91,7 +91,7 @@ class TerminalOutput extends Component {
     }
   };
 
-  write(data: any) {
+  write(data) {
     this.xterm && this.xterm.write(data);
   }
 
