@@ -1,0 +1,35 @@
+{
+  "name": "xtermjs-resize-demo-with-react",
+  "version": "1.0.0",
+  "description": "Created for this SO question https://stackoverflow.com/questions/55322629/how-to-get-xterm-js-resize-properly",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "eslint": "5.12.0",
+    "eslint-config-react-app": "3.0.8",
+    "flow-bin": "0.96.0",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-resizable": "1.7.5",
+    "react-scripts": "2.1.8",
+    "resize-observer-polyfill": "1.5.1",
+    "styled-components": "4.2.0",
+    "xterm": "3.9.2"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider  build",
+    "snapshot": "react-scripts --openssl-legacy-provider  build && react-snapshot",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
